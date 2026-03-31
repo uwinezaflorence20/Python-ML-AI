@@ -1,0 +1,3 @@
+ourmatrix3<- matrix(c(1,2,3,4,5,6,7,8,9),nrow=3, ncol=3)
+thisarray<- c(1:50)
+Data_Frame_Example <- data.frame(Patient_ID = c("P001","P002","P003","P004"),HBR = c(95,90,85,100), SP02 =c(99,90,88,100))
