@@ -105,4 +105,6 @@ Error in xy.coords(x, y, xlabel, ylabel, log) :
 > x <-c(5,7,8,7,2,2,9,4,11,12,9,6)
 > y <- c(100,90,92,91,105,98,89,99,88,87,95,96)
 > plot(x,y)
-> 
+> x<- c("MSC_WSN","MSc-ECS","PHD-WSN","PHD_ECS")
+> y<- c(20,14,5,7)
+> barplot(y,names.arg = x)
