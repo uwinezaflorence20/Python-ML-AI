@@ -108,3 +108,58 @@ Error in xy.coords(x, y, xlabel, ylabel, log) :
 > x<- c("MSC_WSN","MSc-ECS","PHD-WSN","PHD_ECS")
 > y<- c(20,14,5,7)
 > barplot(y,names.arg = x)
+
+
+sapply(x, function(y) table(is(na(y))))
+ Show Traceback
+ 
+ Rerun with Debug
+ Error in na(y) : could not find function "na" 
+> sapply(x, function(y) table(is.na(y)))
+     age.FALSE      sex.FALSE       cp.FALSE trestbps.FALSE     chol.FALSE      fbs.FALSE  restecg.FALSE 
+           303            303            303            303            303            303            303 
+ thalach.FALSE    exang.FALSE  oldpeak.FALSE    slope.FALSE       ca.FALSE     thal.FALSE   target.FALSE 
+           303            303            303            303            303            303            303 
+> duplicated(x)
+  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [19] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [55] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [91] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[127] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[145] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[163] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[181] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[199] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[217] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[235] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[253] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[271] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[289] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+> df<-x
+> duplicates<-df[duplicated(df),]
+> duplicate_count <-(df[duplicated(df),])
+> duplicates
+    age sex cp trestbps chol fbs restecg thalach exang oldpeak slope ca thal target
+165  38   1  2      138  175   0       1     173     0       0     2  4    2      1
+> x<-x[duplicated(x),]
+> df<-x
+> duplicates<-df[duplicated(df),]
+> duplicate_count <-(df[duplicated(df),])
+> duplicates
+ [1] age      sex      cp       trestbps chol     fbs      restecg  thalach  exang    oldpeak  slope    ca      
+[13] thal     target  
+<0 rows> (or 0-length row.names)
+> x
+    age sex cp trestbps chol fbs restecg thalach exang oldpeak slope ca thal target
+165  38   1  2      138  175   0       1     173     0       0     2  4    2      1
+> df<-x
+> duplicates<-df[duplicated(df),]
+> duplicate_count <-(df[duplicated(df),])
+> 
+> duplicates
+ [1] age      sex      cp       trestbps chol     fbs      restecg  thalach  exang    oldpeak  slope    ca      
+[13] thal     target  
+<0 rows> (or 0-length row.names)
